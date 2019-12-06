@@ -25,6 +25,6 @@ public class Bike {
 
     @Override
     public String toString() {
-        return "BikeID: " + bikeID + ", Status:" + bikeStatusConst;
+        return "BikeID " + bikeID + " is " + bikeStatusConst;
     }
 }

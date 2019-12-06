@@ -38,7 +38,6 @@ public class User {
 
         @Override
     public String toString() {
-        return "User " + name + " " + surname +  ", currentlyRentedBike=" + currentlyRentedBike +
-                '}';
+        return "User " + name + " " + surname +  ", currentlyRentedBike " + currentlyRentedBike ;
     }
 }

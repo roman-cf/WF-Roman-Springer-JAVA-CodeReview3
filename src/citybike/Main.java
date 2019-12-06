@@ -29,9 +29,10 @@ public class Main {
         bikeMap.put(bike9.getBikeID(),bike9);
         bikeMap.put(bike10.getBikeID(),bike10);
 
-        for(int entry :bikeMap.keySet()){
+        /*for(int entry :bikeMap.keySet()){
             System.out.println((entry) + ": " +  bikeMap.get(entry));
-        }
+        }*/
+
         // generate Station object - put them in a HashMap
         ArrayList<Bike> bikesInStation1 = new ArrayList<>();
         Stations station1 = new Stations("Mariahilferstrasse",bikesInStation1);
@@ -66,7 +67,7 @@ public class Main {
         User user4 = new User("Daivd", "Baumgartner");
 
         // UserZ rents a bike bikeX from stationY1
-        System.out.println("\n rent bike---------------------------------");
+        System.out.println("\n rent bike from station#1---------------------------------");
         station1.rentBike(user3,bike10);
 
         // bikeX is removed from the data of that Station, and connected to a userZ

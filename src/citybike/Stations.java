@@ -51,7 +51,7 @@ public class Stations {
             bikesIn.remove(bikesIn.indexOf(bikex));
             bikex.setBikeStatusConst(Bike.bikeStatus.inService);
             userx.setCurrentlyRentedBike(bikex);
-
+            // check if bike in in station is missing
         }else if (bikex.getBikeStatus()== Bike.bikeStatus.broken){
             System.out.println("Sorry, bike# "+bikex.getBikeID()+" is broken, you can't rent it.");
         }else if (userx.getCurrentlyRentedBike()!= null){
