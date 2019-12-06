@@ -20,8 +20,7 @@ public class Stations {
     }
 
     public boolean addBike(Bike bike) {
-        if (bikesIn.size() > 6) {
-            System.out.println("Sorry, Station is full.");
+        if (bikesIn.size() >= 4) {
             return false;
         } else {
             this.bikesIn.add(bike);
@@ -31,6 +30,10 @@ public class Stations {
 
     public int getStationID() {
         return stationID;
+    }
+
+    public String getLocation() {
+        return location;
     }
 
     @Override

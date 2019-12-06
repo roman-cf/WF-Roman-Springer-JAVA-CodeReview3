@@ -26,6 +26,8 @@ public class User {
         if (stationx.addBike(bikex)) {
             currentlyRentedBike = null;
             bikex.setBikeStatusConst(Bike.bikeStatus.forRent);
+        }else{
+            System.out.println("Sorry, you can't return bike "+bikex.getBikeID()+ " , becuase station "+stationx.getLocation() + " ist full!");
         }
     }
 

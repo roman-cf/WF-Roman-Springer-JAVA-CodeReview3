@@ -66,7 +66,6 @@ public class Main {
         User user3 = new User("Phillip", "Dentaner");
         User user4 = new User("Daivd", "Baumgartner");
 
-
         // UserZ rents a bike bikeX from stationY1
         station1.rentBike(user3,bike10);
 
