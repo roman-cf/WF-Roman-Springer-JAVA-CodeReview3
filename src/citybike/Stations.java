@@ -1,5 +1,4 @@
 package citybike;
-
 import java.util.ArrayList;
 
 public class Stations {
@@ -13,7 +12,6 @@ public class Stations {
         this.stationID = idCount++;
         this.location = location;
         this.bikesIn = bikesIn;
-
     }
 
     public ArrayList<Bike> getBikesIn() {
@@ -47,11 +45,13 @@ public class Stations {
     }
 
     public void rentBike(User userx, Bike bikex){
-        if(bikex.getBikeStatus()== Bike.bikeStatus.forRent && userx.getCurrentlyRentedBike()==null){
+
+        boolean temp = bikesIn.contains(bikex);
+        if(bikex.getBikeStatus()== Bike.bikeStatus.forRent && userx.getCurrentlyRentedBike()==null && temp){
             bikesIn.remove(bikesIn.indexOf(bikex));
             bikex.setBikeStatusConst(Bike.bikeStatus.inService);
             userx.setCurrentlyRentedBike(bikex);
-            // check if bike in in station is missing
+            // check if bike in station is missing
         }else if (bikex.getBikeStatus()== Bike.bikeStatus.broken){
             System.out.println("Sorry, bike# "+bikex.getBikeID()+" is broken, you can't rent it.");
         }else if (userx.getCurrentlyRentedBike()!= null){

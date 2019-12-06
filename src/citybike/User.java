@@ -26,12 +26,16 @@ public class User {
     }
 
     public void returnBike(Stations stationx) {
-        Bike bikex = this.currentlyRentedBike;
-        if (stationx.addBike(bikex)) {
-            currentlyRentedBike = null;
-            bikex.setBikeStatusConst(Bike.bikeStatus.forRent);
+        if(currentlyRentedBike!=null) {
+            Bike bikex = this.currentlyRentedBike;
+            if (stationx.addBike(bikex)) {
+                currentlyRentedBike = null;
+                bikex.setBikeStatusConst(Bike.bikeStatus.forRent);
+            } else {
+                System.out.println("Sorry, you can't return bike# " + bikex.getBikeID() + " , becuase station " + stationx.getLocation() + " ist full! (" + stationx.getMaxStorage() + ")");
+            }
         }else{
-            System.out.println("Sorry, you can't return bike "+bikex.getBikeID()+ " , becuase station "+stationx.getLocation() + " ist full! ("+stationx.getMaxStorage()+")");
+            System.out.println(" you have no bike you can return");
         }
     }
 

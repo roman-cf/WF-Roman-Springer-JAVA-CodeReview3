@@ -57,7 +57,7 @@ public class Main {
         station2.addBike(bike7);
         station2.addBike(bike4);
         station2.addBike(bike1);
-        station2.addBike(bike3);
+        station2.addBike(bike5);
         System.out.println(station1.toString());
 
         //Create 4 users
