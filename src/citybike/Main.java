@@ -1,5 +1,4 @@
 package citybike;
-import citybike.Bike;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -67,6 +66,7 @@ public class Main {
         User user4 = new User("Daivd", "Baumgartner");
 
         // UserZ rents a bike bikeX from stationY1
+        System.out.println("\n rent bike---------------------------------");
         station1.rentBike(user3,bike10);
 
         // bikeX is removed from the data of that Station, and connected to a userZ
@@ -74,10 +74,14 @@ public class Main {
         System.out.println(station1.toString());
 
         // userZ returns a bike to stationY2
+        System.out.println("\n return bike---------------------------------");
         user3.returnBike(station2);
         System.out.println(user3.toString());
         System.out.println(station2.toString());
 
+        System.out.println("\n rent another bike---------------------------------");
+        station1.rentBike(user3,bike2);
+        System.out.println(station1.toString());
 
 
     }

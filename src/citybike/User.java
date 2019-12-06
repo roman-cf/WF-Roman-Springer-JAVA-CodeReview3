@@ -21,24 +21,24 @@ public class User {
         this.currentlyRentedBike = currentlyRentedBike;
     }
 
-    public void returnBike( Stations stationx) {
+    public Bike getCurrentlyRentedBike() {
+        return currentlyRentedBike;
+    }
+
+    public void returnBike(Stations stationx) {
         Bike bikex = this.currentlyRentedBike;
         if (stationx.addBike(bikex)) {
             currentlyRentedBike = null;
             bikex.setBikeStatusConst(Bike.bikeStatus.forRent);
         }else{
-            System.out.println("Sorry, you can't return bike "+bikex.getBikeID()+ " , becuase station "+stationx.getLocation() + " ist full!");
+            System.out.println("Sorry, you can't return bike "+bikex.getBikeID()+ " , becuase station "+stationx.getLocation() + " ist full! ("+stationx.getMaxStorage()+")");
         }
     }
 
 
         @Override
     public String toString() {
-        return "User{" +
-                "userID=" + userID +
-                ", name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", currentlyRentedBike=" + currentlyRentedBike +
+        return "User " + name + " " + surname +  ", currentlyRentedBike=" + currentlyRentedBike +
                 '}';
     }
 }

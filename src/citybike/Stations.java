@@ -1,5 +1,4 @@
 package citybike;
-import citybike.Bike;
 
 import java.util.ArrayList;
 
@@ -8,11 +7,13 @@ public class Stations {
     private static int idCount = 1;
     private String location;
     private ArrayList<Bike> bikesIn;
+    private int maxStorage = 4;
 
     public Stations(String location, ArrayList<Bike> bikesIn) {
         this.stationID = idCount++;
         this.location = location;
         this.bikesIn = bikesIn;
+
     }
 
     public ArrayList<Bike> getBikesIn() {
@@ -36,20 +37,26 @@ public class Stations {
         return location;
     }
 
+    public int getMaxStorage() {
+        return maxStorage;
+    }
+
     @Override
     public String toString() {
         return bikesIn.size()+" bikes in station# "+this.stationID+" "+this.location+ ": "+ bikesIn ;
     }
 
     public void rentBike(User userx, Bike bikex){
-        if(bikex.getBikeStatus()== Bike.bikeStatus.forRent){
+        if(bikex.getBikeStatus()== Bike.bikeStatus.forRent && userx.getCurrentlyRentedBike()==null){
             bikesIn.remove(bikesIn.indexOf(bikex));
             bikex.setBikeStatusConst(Bike.bikeStatus.inService);
             userx.setCurrentlyRentedBike(bikex);
 
         }else if (bikex.getBikeStatus()== Bike.bikeStatus.broken){
             System.out.println("Sorry, bike# "+bikex.getBikeID()+" is broken, you can't rent it.");
-        }else {
+        }else if (userx.getCurrentlyRentedBike()!= null){
+            System.out.println("you can rent(ride) only one bike");
+        }else{
             System.out.println("Wrong User or wrong bike! Cannot proceed, ask admin.");
         }
     }
