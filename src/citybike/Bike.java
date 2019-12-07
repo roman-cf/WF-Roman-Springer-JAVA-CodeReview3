@@ -16,7 +16,6 @@ public class Bike {
         return bikeID;
     }
 
-
     public bikeStatus getBikeStatus() { return bikeStatusConst; }
 
     public void setBikeStatusConst(bikeStatus bikeStatusConst) {

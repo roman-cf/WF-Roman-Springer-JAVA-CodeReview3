@@ -10,14 +10,14 @@ public class User {
     private String name;
     private String surname;
     private Bike currentlyRentedBike;
-    private ArrayList<Rent> rentals;
+    private ArrayList<Rent> rental;
 
     public User(String name, String surname) {
         this.userID = atomicInteger.incrementAndGet();
         this.name = name;
         this.surname = surname;
         this.currentlyRentedBike = currentlyRentedBike;
-        this.rentals = new ArrayList<Rent>();
+        this.rental = new ArrayList<Rent>();
     }
 
     public int getUserID() {
