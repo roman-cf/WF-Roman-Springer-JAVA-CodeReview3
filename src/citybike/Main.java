@@ -53,7 +53,7 @@ public class Main {
         // put 3 bikes in Station1, and put 4 bikes in Station2)
         station1.addBike(bike10);
         station1.addBike(bike2);
-        station1.addBike(bike6);
+        station1.addBike(bike3);
         station2.addBike(bike7);
         station2.addBike(bike4);
         station2.addBike(bike1);

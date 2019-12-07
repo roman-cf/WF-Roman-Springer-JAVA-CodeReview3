@@ -1,18 +1,23 @@
 package citybike;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.ArrayList;
+
 
 public class User {
     private int userID;
+    private static AtomicInteger atomicInteger = new AtomicInteger(0);
+
     private String name;
     private String surname;
     private Bike currentlyRentedBike;
-    private static AtomicInteger atomicInteger = new AtomicInteger(0);
+    private ArrayList<Rent> rentals;
 
     public User(String name, String surname) {
         this.userID = atomicInteger.incrementAndGet();
         this.name = name;
         this.surname = surname;
         this.currentlyRentedBike = currentlyRentedBike;
+        this.rentals = new ArrayList<Rent>();
     }
 
     public int getUserID() {
