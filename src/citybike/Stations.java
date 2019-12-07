@@ -19,7 +19,8 @@ public class Stations {
     }
 
     public boolean addBike(Bike bike) {
-        if (bikesIn.size() >= 4) {
+        // bike in workshop cannot be applied to a station
+        if (bikesIn.size() >= maxStorage || bike.getBikeStatus() == Bike.bikeStatus.inWorkshop) {
             return false;
         } else {
             this.bikesIn.add(bike);

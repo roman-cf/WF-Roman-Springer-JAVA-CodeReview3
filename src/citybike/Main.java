@@ -53,7 +53,7 @@ public class Main {
         // put 3 bikes in Station1, and put 4 bikes in Station2)
         station1.addBike(bike10);
         station1.addBike(bike2);
-        station1.addBike(bike3);
+        station1.addBike(bike6);
         station2.addBike(bike7);
         station2.addBike(bike4);
         station2.addBike(bike1);
@@ -75,15 +75,15 @@ public class Main {
         System.out.println(station1.toString());
 
         // userZ returns a bike to stationY2
-        System.out.println("\n return bike---------------------------------");
+        System.out.println("\n return bike at station 2---------------------------------");
         user3.returnBike(station2);
         System.out.println(user3.toString());
         System.out.println(station2.toString());
 
-        System.out.println("\n rent another bike---------------------------------");
+        System.out.println("\n rent another at station 1 bike---------------------------------");
         station1.rentBike(user3,bike2);
+        System.out.println(user3.toString());
         System.out.println(station1.toString());
-
 
     }
 }

@@ -1,13 +1,15 @@
 package citybike;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class User {
     private int userID;
     private String name;
     private String surname;
     private Bike currentlyRentedBike;
+    private static AtomicInteger atomicInteger = new AtomicInteger(0);
 
     public User(String name, String surname) {
-        this.userID = Integer.parseInt(String.valueOf(System.nanoTime() % Integer.MAX_VALUE));
+        this.userID = atomicInteger.incrementAndGet();
         this.name = name;
         this.surname = surname;
         this.currentlyRentedBike = currentlyRentedBike;
@@ -32,7 +34,7 @@ public class User {
                 currentlyRentedBike = null;
                 bikex.setBikeStatusConst(Bike.bikeStatus.forRent);
             } else {
-                System.out.println("Sorry, you can't return bike# " + bikex.getBikeID() + " , becuase station " + stationx.getLocation() + " ist full! (" + stationx.getMaxStorage() + ")");
+                System.out.println("Sorry, you can't return bike# " + bikex.getBikeID() + " , because station " + stationx.getLocation() + " is full! (" + stationx.getMaxStorage() + ")");
             }
         }else{
             System.out.println(" you have no bike you can return");
