@@ -12,7 +12,7 @@ public class Rent {
         RentEnd = null;
     }
 
-    public void setRentEnd(LocalDateTime rentEnd) {
-        RentEnd = rentEnd;
+    public void rentEnd() {
+        RentEnd = LocalDateTime.now();
     }
 }
