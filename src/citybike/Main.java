@@ -50,7 +50,7 @@ public class Main {
         stationMap.put(station4.getStationID(),station4.getBikesIn());
 
 
-        // put 3 bikes in Station1, and put 4 bikes in Station2)
+        // put 3 bikes in Station1, and put 4 bikes in Station2 - you cant put a bike into a station which is in the workshop
         station1.addBike(bike10);
         station1.addBike(bike2);
         station1.addBike(bike3);
