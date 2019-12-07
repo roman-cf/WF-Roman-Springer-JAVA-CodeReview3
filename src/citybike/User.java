@@ -19,7 +19,9 @@ public class User {
         this.currentlyRentedBike = currentlyRentedBike;
         this.rental = new ArrayList<Rent>();
     }
-
+    public void initRental(int bikeID){
+        this.rental.add(new Rent(bikeID));
+    }
     public int getUserID() {
         return userID;
     }
@@ -38,6 +40,7 @@ public class User {
             if (stationx.addBike(bikex)) {
                 currentlyRentedBike = null;
                 bikex.setBikeStatusConst(Bike.bikeStatus.forRent);
+                rental.get(rental.size()-1).rentEnd();
             } else {
                 System.out.println("Sorry, you can't return bike# " + bikex.getBikeID() + " , because station " + stationx.getLocation() + " is full! (" + stationx.getMaxStorage() + ")");
             }
